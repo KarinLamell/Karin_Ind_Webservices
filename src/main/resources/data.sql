@@ -12,3 +12,11 @@ VALUES
     ('Cissi','Cikada','cissi@email.com','0703033456','premium','2'),
     ('Daniel','Druva','daniel@email.com','0704043456','standard','3'),
     ('Erika', 'Ek','erika@email.com','0705052345','standard','3');
+
+INSERT INTO post(post, member_member_id)
+VALUES
+    ('Solen skiner, livet leker!', '1'),
+    ('Blå. blå himlar och vatten', '2'),
+    ('Kräftor kräva dessa drycker', '3'),
+    ('Om natten är alla katter grå', '4'),
+    ('Ibland bryter man bara ihop', '5');

@@ -14,7 +14,7 @@ public class Memberservice implements MemberserviceInterface {
 @Autowired
     private MemberRepository memberRepository;
 
-   /* public Memberservice(MemberRepository memberRepository) {
+   /* public Memberservice(BlogPostRepository memberRepository) {
         //super();
         this.memberRepository = memberRepository;}*/
 
