@@ -1,11 +1,11 @@
 
-INSERT INTO addresses (street, postal_code, city, country)
+INSERT INTO address(city, country, postal_code, street )
 VALUES
-    ('Maskrosvägen 8', '12345','Solöga','Sverige'),
-    ('Sotargatan 4','23456','Lilleby','Sverige'),
-    ('Gurkgränd 2', '11145','Edet','Sverige');
+    ('Solöga','Sverige', '12345','Maskrosvägen 8'),
+    ('Lilleby','Sverige','23456','Sotargatan 4'),
+    ('Edet','Sverige','11145','Gurkgränd 2');
 
-INSERT INTO members(first_name, last_name,e_mail,phone, member_type, address_id)
+INSERT INTO member(first_name, last_name,e_mail,phone, member_type, address_address_id)
 VALUES
     ('Anna','Andersson','anna"email.com','0701012345','premium','1'),
     ('Bertil','Borg','bertil@email.com','0702023456','enhanced','1'),

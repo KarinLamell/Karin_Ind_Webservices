@@ -5,12 +5,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+
 public interface MemberserviceInterface {
 
     Member saveMember(Member member);
     List<Member> getAllMembers();
 
-    void deleteMember(int id);
+    //void deleteMember(int id);
 
 }

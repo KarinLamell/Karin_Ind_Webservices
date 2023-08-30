@@ -16,7 +16,7 @@ public class BlogPost {
 
     @ManyToOne // (cascade = CascadeType.ALL)
     @JoinColumn(name = "Bloggposter", nullable = false)
-    private Member member;
+    private BlogPost blogPost;
 
     public Member getMember() {
         return member;

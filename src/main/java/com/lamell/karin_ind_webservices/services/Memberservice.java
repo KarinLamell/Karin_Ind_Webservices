@@ -1,19 +1,22 @@
 package com.lamell.karin_ind_webservices.services;
 
-import com.lamell.karin_ind_webservices.exceptions.ResourceNotFoundException;
 import com.lamell.karin_ind_webservices.model.Member;
 import com.lamell.karin_ind_webservices.repositories.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
-
+@Qualifier("member")
+@Service
 public class Memberservice implements MemberserviceInterface {
-
+@Autowired
     private MemberRepository memberRepository;
 
-    public Memberservice(MemberRepository memberRepository) {
-        super();
-        this.memberRepository = memberRepository;}
+   /* public Memberservice(MemberRepository memberRepository) {
+        //super();
+        this.memberRepository = memberRepository;}*/
 
     @Override
     public Member saveMember(Member member) {
@@ -26,10 +29,9 @@ public class Memberservice implements MemberserviceInterface {
         return memberRepository.findAll();
     }
 
-       @Override
-    public void deleteMember(int id) {
-        memberRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "Id", id));
+
+   /* public void deleteMember(int id) {/ memberRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "Id", id));
         memberRepository.deleteById(id);
 
-    }
+    }*/
 }

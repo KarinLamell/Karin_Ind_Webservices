@@ -5,19 +5,19 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="addresses")
+//@Table(name="addresses")
 public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int addressId;
-    @Column(length = 45)
+    // @Column(length = 45)
     private String street;
-    @Column(length = 5)
+    //@Column(length = 5)
     private String postalCode;
-    @Column(length = 30)
+    //@Column(length = 30)
     private String city;
-    @Column(length = 20)
+    //@Column(length = 20)
     private String country;
 
     //@OneToMany(mappedBy = "address", cascade = CascadeType.ALL) - Av någon anledning fungerar dessa rader inte i detta program.

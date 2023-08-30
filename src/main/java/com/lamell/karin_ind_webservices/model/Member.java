@@ -4,26 +4,19 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="members")
 public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private int memberId;
-    @Column(length = 30, nullable = false)
     private String firstName;
-    @Column(length = 30, nullable = false)
     private String lastName;
-    @Column(length = 30, nullable = false)
     private String eMail;
-    @Column(length = 12, nullable = true)
     private String phone;
 
     private String memberType;
 
-    @ManyToOne //(cascade = CascadeType.ALL )
-    @JoinColumn(name = "addressId", nullable = false)
+    @ManyToOne
     private Address address;
 
     public Address getAddress(){return address;}
