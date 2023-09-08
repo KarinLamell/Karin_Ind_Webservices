@@ -1,19 +1,29 @@
 package com.lamell.karin_ind_webservices.model;
 
+
 import jakarta.persistence.*;
 
 @Entity
-public class Post {
-
+//@Table(name="blog")
+public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private int postId;
 
     @Column
     private String post;
 
-    @ManyToOne
+    @OneToOne
     private Member member;
+
+    public int getpostId() {
+        return postId;
+    }
+
+    public void setpostId(int postId) {
+        this.postId = postId;
+    }
 
     public Member getMember() {
         return member;
@@ -23,20 +33,13 @@ public class Post {
         this.member = member;
     }
 
-    public Post() {
+    public Blog() {
     }
 
-    public Post(int postId, String post) {
+    public Blog(int postId, String post, Member member) {
         this.postId = postId;
         this.post = post;
-    }
-
-    public int getPostId() {
-        return postId;
-    }
-
-    public void setPostId(int postId) {
-        this.postId = postId;
+        this.member = member;
     }
 
     public String getPost() {
@@ -46,6 +49,4 @@ public class Post {
     public void setPost(String post) {
         this.post = post;
     }
-
-
 }

@@ -2,16 +2,15 @@ package com.lamell.karin_ind_webservices.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
 
 @Entity
-//@Table(name="addresses")
+@Table(name= "address")
 public class Address {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "addressId", nullable = false)
     private int addressId;
-    // @Column(length = 45)
+
     private String street;
     //@Column(length = 5)
     private String postalCode;
@@ -19,6 +18,14 @@ public class Address {
     private String city;
     //@Column(length = 20)
     private String country;
+
+    public int getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(int addressId) {
+        this.addressId = addressId;
+    }
 
     //@OneToMany(mappedBy = "address", cascade = CascadeType.ALL) - Av någon anledning fungerar dessa rader inte i detta program.
     //private List<Member> member;
@@ -32,14 +39,6 @@ public class Address {
         this.postalCode = postalCode;
         this.city = city;
         this.country = country;
-    }
-
-    public int getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(int addressId) {
-        this.addressId = addressId;
     }
 
     public String getStreet() {

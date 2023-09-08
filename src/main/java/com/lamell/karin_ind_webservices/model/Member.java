@@ -2,13 +2,14 @@ package com.lamell.karin_ind_webservices.model;
 
 import jakarta.persistence.*;
 
-
 @Entity
+//@Table(name="member")
 public class Member {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "member_id", nullable = false)
     private int memberId;
+
     private String firstName;
     private String lastName;
     private String eMail;
@@ -18,6 +19,17 @@ public class Member {
 
     @ManyToOne
     private Address address;
+
+
+
+    public int getMemberId() {
+        return memberId;
+    }
+
+    public void setMemberId(int memberId) {
+        this.memberId = memberId;
+    }
+
 
     public Address getAddress(){return address;}
 
@@ -36,13 +48,6 @@ public class Member {
         this.address = address;
     }
 
-    public int getMemberId() {
-        return memberId;
-    }
-
-    public void setMemberId(int memberId) {
-        this.memberId = memberId;
-    }
 
     public String getFirstName() {
         return firstName;

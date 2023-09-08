@@ -11,6 +11,8 @@ public interface MemberserviceInterface {
     Member saveMember(Member member);
     List<Member> getAllMembers();
 
+    Member getMemberById(int memberId);
+
     //void deleteMember(int id);
 
 }
