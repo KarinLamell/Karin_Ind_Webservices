@@ -24,7 +24,7 @@ public class MemberController {
         this.memberService = memberService;
     }
 
-    @PostMapping("newuser")
+    @PostMapping("/newuser")
     @PreAuthorize("hasAnyRole()")
     public ResponseEntity<Member> saveUser(@RequestBody Member member){
         return new ResponseEntity<>(memberService.saveMember(member), HttpStatus.CREATED);
